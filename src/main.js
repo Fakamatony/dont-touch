@@ -1,8 +1,11 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
+`import './assets/styles/styles.scss'`
+import store from './vuex/store.js'
 
-Vue.config.productionTip = false
+const app = createApp(App)
+app.use(store)
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+app.config.productionTip = false
+
+app.mount('#app')
