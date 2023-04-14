@@ -2,7 +2,9 @@
   <div class="v-catalog-item">
     <img class="v-catalog-item__img img" :src=" require('../assets/images/' + product_data.image)" alt="">
     <p class="v-catalog-item__name">{{ product_data.name }}</p>
-    <p class="v-catalog-item__price">{{ product_data.price }}</p>
+    <p class="v-catalog-item__price">{{ product_data.price }} ₽</p>
+    <a href=""></a>
+
     <button
       class="v-catalog-item__ad_to_cart_btn btn"
       @click="addToCart"
@@ -27,7 +29,8 @@ export default {
       this.$emit('addToCart', this.product_data)
     }
 
-  }
+  },
+  mounted() {}
 }
 
 </script>

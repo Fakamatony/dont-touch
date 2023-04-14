@@ -1,11 +1,23 @@
 <template>
   <div class="v-catalog">
-    <v-catalog-item
-      v-for="product in this.PRODUCTS"
-      :key="product.id"
-      :product_data="product"
-      @addToCart="addToCart"
-    />
+    <router-link
+      :to="{ name: 'cart'}"
+      :cart_data="CART"
+    >
+      <div class="v-catalog__link_to_cart">
+        Cart: {{ CART.length }}
+      </div>
+    </router-link>
+    <h1>Catalog</h1>
+    <div class="v-catalog__list">
+      <v-catalog-item
+        v-for="product in this.PRODUCTS"
+        :key="product.id"
+        :product_data="product"
+        @addToCart="addToCart"
+      />
+    </div>
+
   </div>
 
 </template>
@@ -28,7 +40,8 @@ export default {
   },
   computed:{
     ...mapGetters([
-      'PRODUCTS'
+      'PRODUCTS',
+      'CART'
     ])
   },
   methods:{
@@ -51,11 +64,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
   .v-catalog{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap:wrap;
+    &__list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__link_to_cart{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 16px;
+      border: solid 2px black;
+    }
   }
 </style>

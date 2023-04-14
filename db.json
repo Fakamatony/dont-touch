@@ -6,6 +6,7 @@
       "price": 12,
       "id": 1,
       "available": true,
+      "quantity": 1,
       "category": "Мужские"
     },
     {
@@ -14,6 +15,7 @@
       "price": 3242,
       "id": 2,
       "available": true,
+      "quantity": 1,
       "category": "Женские"
     },
     {
@@ -22,6 +24,7 @@
       "price": 5454,
       "id": 3,
       "available": false,
+      "quantity": 1,
       "category": "Женские"
     },
     {
@@ -30,6 +33,7 @@
       "price": 1212,
       "id": 4,
       "available": true,
+      "quantity": 1,
       "category": "Мужские"
     },
     {
@@ -38,6 +42,7 @@
       "price": 2354,
       "id": 5,
       "available": false,
+      "quantity": 1,
       "category": "Женские"
     },
     {
@@ -46,6 +51,7 @@
       "price": 533,
       "id": 6,
       "available": true,
+      "quantity": 1,
       "category": "Женские"
     }
   ]
