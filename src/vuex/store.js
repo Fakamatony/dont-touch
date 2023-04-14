@@ -1,4 +1,4 @@
-import { createStore } from 'vuex'
+import index, { createStore } from 'vuex'
 import axios from 'axios';
 // eslint-disable-next-line
 const store = createStore({
@@ -17,6 +17,7 @@ const store = createStore({
           if (item.id === product.id){
             isProductExists = true
             item.quantity++
+            item[index]++
           }
         })
         if (!isProductExists){
@@ -29,6 +30,14 @@ const store = createStore({
     },
     REMOVE_FROM_CART: (state, index)=>{
       state.cart.splice(index, 1)
+    },
+    INCREMENT: (state, index)=>{
+      state.cart[index].quantity++
+    },
+    DECREMENT: (state, index)=>{
+      if ( state.cart[index].quantity > 1){
+        state.cart[index].quantity--
+      }
     }
   },
   actions:{
@@ -48,6 +57,12 @@ const store = createStore({
     },
     ADD_TO_CART({commit}, product){
       commit('SET_CART', product);
+    },
+    INCREMENT_CART_ITEM({commit}, index){
+      commit('INCREMENT', index)
+    },
+    DECREMENT_CART_ITEM({commit}, index){
+      commit('DECREMENT', index)
     },
     DELETE_FROM_CART({commit}, index){
       commit('REMOVE_FROM_CART', index)

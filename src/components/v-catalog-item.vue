@@ -14,6 +14,7 @@
 </template>
 
 <script>
+
 export default {
   props:{
     product_data:{
@@ -30,7 +31,7 @@ export default {
     }
 
   },
-  mounted() {}
+
 }
 
 </script>

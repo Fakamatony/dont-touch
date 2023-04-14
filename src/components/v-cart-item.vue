@@ -7,13 +7,20 @@
     </div>
     <div class="v-cart-item__quantity">
       <p>Qoan</p>
-      {{ cart_item_data.quantity }}
+      <span>
+        <span @click="decrementItem">-</span>
+        {{ cart_item_data.quantity }}
+        <span @click="incrementItem">+</span>
+      </span>
+
     </div>
     <button @click="deleteFromCart">Delete</button>
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: 'v-cart-item',
   props:{
@@ -25,10 +32,17 @@ export default {
     }
   },
   methods:{
+    incrementItem(){
+      this.$emit('increment')
+    },
+    decrementItem(){
+      this.$emit('decrement')
+    },
     deleteFromCart(){
       this.$emit('deleteFromCart')
     }
   },
+
 
 }
 </script>
