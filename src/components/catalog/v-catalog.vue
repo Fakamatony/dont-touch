@@ -69,7 +69,6 @@ export default {
     &__list{
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
     }
     &__link_to_cart{

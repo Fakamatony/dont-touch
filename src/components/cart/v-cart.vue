@@ -16,7 +16,7 @@
       @decrement="decrement(index)"
 
     />
-    <div class="v-cart__total">
+    <div v-if="CART.length" class="v-cart__total">
       <p class="total__name">Total coast</p>
       <p>{{ cartTotalCoast }} ₽</p>
     </div>
@@ -49,7 +49,7 @@ export default {
       let result = []
       if (this.CART.length){
         for (let item of this.CART){
-          result.push(item.price + item.quantity)
+          result.push(item.price * item.quantity)
         }
         result = result.reduce(function (sum, el){
           return sum + el
@@ -83,14 +83,21 @@ export default {
   .v-cart{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__total{
       position: static;
       width: 100%;
       height: 100px;
       display: flex;
       justify-content: center;
+      align-items: center;
       background-color: seagreen;
       color: white;
+    }
+    .total__name{
+      margin-right: 8px;
     }
   }
 </style>

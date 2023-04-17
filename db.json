@@ -2,50 +2,56 @@
   "products": [
     {
       "image": "1.jpeg",
-      "name": "T-shirt 1",
+      "name": "Leopard dikiy",
       "price": 12,
       "id": 1,
       "available": true,
+      "quantity": 1,
       "category": "Мужские"
     },
     {
       "image": "2.jpeg",
-      "name": "T-shirt 2",
+      "name": "Leopard strogiy",
       "price": 3242,
       "id": 2,
       "available": true,
+      "quantity": 1,
       "category": "Женские"
     },
     {
       "image": "3.jpeg",
-      "name": "T-shirt 3",
+      "name": "Leopard sad",
       "price": 5454,
       "id": 3,
       "available": false,
+      "quantity": 1,
       "category": "Женские"
     },
     {
       "image": "4.jpeg",
-      "name": "T-shirt 4",
+      "name": "Leopard funny",
       "price": 1212,
       "id": 4,
       "available": true,
+      "quantity": 1,
       "category": "Мужские"
     },
     {
       "image": "5.jpeg",
-      "name": "T-shirt 5",
+      "name": "Leopard dumb",
       "price": 2354,
       "id": 5,
       "available": false,
+      "quantity": 1,
       "category": "Женские"
     },
     {
       "image": "6.jpeg",
-      "name": "T-shirt 6",
+      "name": "Leopard gay",
       "price": 533,
       "id": 6,
       "available": true,
+      "quantity": 1,
       "category": "Женские"
     }
   ]

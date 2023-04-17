@@ -1,6 +1,6 @@
 <template>
-  <div class="v-catalog-item">
-    <img class="v-catalog-item__img img" :src=" require('../assets/images/' + product_data.image)" alt="">
+  <div class="v-catalog-item no-selected">
+    <img class="v-catalog-item__img img" :src=" require('../../assets/images/' + product_data.image)" alt="">
     <p class="v-catalog-item__name">{{ product_data.name }}</p>
     <p class="v-catalog-item__price">{{ product_data.price }} ₽</p>
     <a href=""></a>
@@ -28,22 +28,26 @@ export default {
   methods:{
     addToCart(){
       this.$emit('addToCart', this.product_data)
-    }
-
+    },
   },
 
 }
 
 </script>
 
-<style scoped>
+<style lang="scss">
  .v-catalog-item{
    border: #2c3e50 2px solid;
-   margin: 10px;
+   margin: 5px;
+   &__img{
+   width: 300px;
+   height: 300px;
+  }
+   &__ad_to_cart_btn{
+     width: 100%;
+     height: 40px;
+     cursor: pointer
+   }
  }
- .img{
-   width: 100px;
-   height: 100px;
 
- }
 </style>
