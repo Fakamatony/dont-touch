@@ -5,7 +5,7 @@
       v-if="isInfoPopUpVisible"
       @closePopup="closeInfoPopup"
       @rightBtnAction="addToCart"
-      left-btn-title="Add to cart"
+      right-btn-title="Add to cart"
       :popupName="product_data.name"
     >
       <div>

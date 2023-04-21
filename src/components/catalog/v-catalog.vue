@@ -1,5 +1,10 @@
 <template>
   <div class="v-catalog">
+
+    <v-notification
+      :messages="messages"
+    />
+
     <router-link
       :to="{ name: 'cart'}"
       :cart_data="CART"
@@ -31,6 +36,7 @@
 import vCatalogItem from './v-catalog-item.vue'
 import {mapActions, mapGetters} from 'vuex';
 import vSelect from '../v-select.vue'
+import vNotification from '../notifications/v-notification.vue'
 
 export default {
   name: 'v-catalog',
@@ -42,12 +48,16 @@ export default {
         {name:"Все",value:"ALL"},
       ],
       selected:'Все',
-      sortedProducts:[]
+      sortedProducts:[],
+      messages:[
+        {name: 'Notitification name', id: Date.now().toLocaleString()}
+      ]
     }
   },
   components:{
     vCatalogItem,
-    vSelect
+    vSelect,
+    vNotification
   },
   computed:{
     ...mapGetters([
@@ -85,7 +95,7 @@ export default {
     this.GET_PRODUCTS_FROM_API()
       .then((response)=>{
         if (response.data){
-          console.log('Заебись загрузилось')
+          console.log('nice')
         }
       })
   }
